@@ -1,0 +1,143 @@
+.new-arrivals .container img{
+    width: 100%;
+    height: 350px;
+}
+
+.card p{
+    color: #024E82;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.2);
+    transform: scale(1.01);
+}
+
+.card {
+    transition: all 0.5s ease;
+}
+
+.card .card-title:hover{
+    color: #024E82 !important;
+
+}
+
+.services i{
+    color: #024E82;
+}
+
+.services p{
+    color: #555555;
+}
+.card {
+    transition: all 0.3s ease;
+    
+    img{
+        border-bottom: 3px solid #024E82;
+    }
+
+    img.image{
+        object-fit: contain;
+        padding: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+        text-align: center;
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+}
+
+.loadMore{
+    background-color: #024E82 !important;
+    border: none !important;
+    border-radius: 10px;
+}
+
+.loadMore::after{
+    content: "\f061";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+    margin-left: 10px;
+    transition: all 0.2s linear;
+}
+
+.loadMore:hover::after{
+    margin-left: 18px;
+}
+
+.loadMore:hover{
+    background-color: transparent !important;
+    color: #024E82;
+    border: 1px solid #024E82 !important;
+}
+
+.new-arrivals {
+  background-color: #f8f9fa;
+}
+
+.new-product-card {
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  
+  &:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  &:hover .card-img-top {
+    transform: scale(1.05);
+  }
+}
+
+
+.new-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #024E82;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.services {
+  background-color: white;
+  
+  .service {
+    padding: 20px;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}

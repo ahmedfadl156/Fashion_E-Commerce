@@ -1,0 +1,169 @@
+.star{
+    color: red;
+}
+
+input{
+    border: none;
+    outline: none;
+    background-color: #FFFFFF;
+    border: 1px solid #EBEBEB;
+    height: 40px;
+    padding: 0 15px;
+    color: #000;
+}
+
+.note{
+    border: 2px solid #ccc;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.note-statement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.note-statement p{
+    background-color: #FBFBFB;
+    border: 1px solid #EBEBEB;
+    width: 80%;
+    padding: 20px 10px;
+}
+
+.order-btn button{
+    background-color: #D6763C;
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 80px;
+    bottom: 10px;
+}
+
+.order-btn{
+    padding: 10px 20px 20px 20px;
+}
+
+.done-order{
+    color: #4ADE80;
+}
+
+.order-placed .container .header , .order-placed .container{
+    border-radius: 10px 10px 0 0;
+}
+
+.order-placed .product-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.order-summary{
+    background-color: #F9FAFB;
+}
+
+.order-summary h3{
+    color: #6B7280;
+}
+
+.order-details h5 , .order-details h6{
+    color: #6B7280;
+}
+
+// Loader
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+}
+
+.processing-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loader__circle {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin: 0 4px;
+  animation: loader_901 1s ease-in-out infinite;
+}
+
+.loader__circle:nth-of-type(1) {
+  background-color: #007aff;
+  animation-delay: 0;
+}
+
+.loader__circle:nth-of-type(2) {
+  background-color: #ff2d55;
+  animation-delay: 0.25s;
+}
+
+.loader__circle:nth-of-type(3) {
+  background-color: #34c759;
+  animation-delay: 0.5s;
+}
+
+.loader__circle:nth-of-type(4) {
+  background-color: #ff9500;
+  animation-delay: 0.75s;
+}
+
+//apply cupon 
+.code-input{
+  height: 45px;
+}
+
+.apply-cupon-btn{
+  right: 0;
+  background-color: #D6763C;
+  color: #fff;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.apply-cupon-btn:hover{
+  background-color: #db6217;
+}
+
+.aftercupon{
+  background-color: green;
+  color: #fff;
+  font-weight: bold;
+}
+
+@keyframes loader_901 {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  40% {
+    transform: scale(1);
+  }
+}
+  

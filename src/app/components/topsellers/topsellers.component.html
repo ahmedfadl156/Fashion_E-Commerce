@@ -1,0 +1,31 @@
+<section class="top-sellers py-5">
+    <div class="text-container text-center">
+        <h2 class="fw-bold">Top Rated Products</h2>
+        <p class="lead">Highest Rated Products by Our Customers</p>
+    </div>
+    <div class="container">
+        <div class="row py-4 g-3">
+            <div class="col-md-3" *ngFor="let product of displayedProducts">
+                <div class="card h-100 d-flex top-rated-card" (click)="onSelectProduct(product._id)">
+                    <div class="rating-badge">Top Rated</div>
+                    <img src="{{product.image}}" alt="{{product.name}}" class="card-img-top">
+                    <div class="card-body text-center d-flex flex-column flex-grow-1">
+                        <h4 class="card-title">{{product.name}}</h4>
+                        <div class="rating mb-2">
+                            <span *ngFor="let star of getStars(product.rating)" class="star">
+                                <i *ngIf="star === 1" class="fas fa-star"></i>
+                                <i *ngIf="star === 0.5" class="fas fa-star-half-alt"></i>
+                                <i *ngIf="star === 0" class="far fa-star"></i>
+                            </span>
+                            <span class="rating-number ms-2">({{product.rating}})</span>
+                        </div>
+                        <p class="fw-bold lead">{{product.price | currency}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <a routerLink="/allproducts" routerLinkActive="active" class="btn btn-lg rounded-0 text-white mt-5">Shop Now</a>
+        </div>
+    </div>
+</section>

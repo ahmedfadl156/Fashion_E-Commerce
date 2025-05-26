@@ -1,0 +1,49 @@
+.table{
+    width: 100%;
+}
+
+.table img{
+    width: 50px;
+    height: 50px;
+}
+
+.table td{
+    vertical-align: middle;
+}
+
+.table .delete{
+    cursor: pointer;
+}
+
+.table .quantity{
+    background-color: transparent;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.cart-total .col-md-4 div:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.checkout-btn{
+    background-color: #D6763C;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.checkout-btn:hover{
+    background-color: #e86c20;
+}
+
+
+.continue-shop{
+    background-color: #e86c20;
+    color: #fff;
+    padding: 10px 20px;
+}

@@ -1,0 +1,69 @@
+<section class="py-5 contact-form mt-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <h2 class="fw-bold fs-1">We Would Love To Hear From You.</h2>
+                <p class="mt-4">If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
+                <form class="mt-5" (ngSubmit)="onSendMessage()">
+                    <div *ngIf="errorMessage" class="alert alert-danger">
+                        {{ errorMessage }}
+                    </div>
+                    <div class="p-info d-flex flex-column gap-3">
+                        <div class="input d-flex flex-column gap-2 w-100">
+                            <label for="name" class="fw-bold">Name</label>
+                            <input type="text" id="name" name="name" [(ngModel)]="name">
+                        </div>
+                        <div class="input d-flex flex-column gap-2 w-100">
+                            <label for="email" class="fw-bold">Email</label>
+                            <input type="text" id="email" name="email" [(ngModel)]="email">
+                        </div>
+                        <div class="input d-flex flex-column gap-2 w-100">
+                            <label for="phone" class="fw-bold">Phone Number</label>
+                            <input type="text" id="phone" name="phone" [(ngModel)]="phone">
+                        </div>
+                    </div>
+                    <div class="text-area d-flex flex-column gap-3 w-100 mt-4">
+                        <label for="message" class="fw-bold">Message</label>
+                        <textarea name="message" id="message" rows="10" [(ngModel)]="message"></textarea>
+                    </div>
+                    <button class="mt-4" [disabled]="isLoading">
+                        <div class="svg-wrapper-1">
+                          <div class="svg-wrapper">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24"
+                              width="24"
+                              height="24"
+                              [class.spin]="isLoading"
+                            >
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                              <path
+                                fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                              ></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <span>{{ isLoading ? 'Sending...' : 'Send Message' }}</span>
+                    </button>          
+                </form>
+            </div>
+            <div class="col-lg-3 offset-1">
+                <div class="visit d-flex flex-column mb-5">
+                    <h2 class="fw-bold mb-4">Visit Us</h2>
+                    <ul class="list-unstyled">
+                        <li class="list-item mb-2">EG, Cairo , Damietta</li>
+                        <li class="list-item">Phone: +201050075993</li>
+                    </ul>
+                </div>
+                <div class="get d-flex flex-column">
+                    <h2 class="fw-bold mb-4">Get In Touch</h2>
+                    <ul class="list-unstyled">
+                        <li class="list-item mb-2">You can get in touch with us on this provided email.</li>
+                        <li class="list-item">Email: af38765220&#64;gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

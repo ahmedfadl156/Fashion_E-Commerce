@@ -1,0 +1,17 @@
+.hero{
+    background: linear-gradient(to bottom right , rgba(0,0,0,0.3) , rgba(0,0,0,0.3)) , url("/assets/Images/about-hero.jpg") no-repeat center center;
+    background-size: cover;
+    height: 50vh;
+}
+
+.hero-title{
+    bottom: 18%;
+    left:8%;
+}
+
+@media(max-width: 600px){
+    .hero-title{
+        bottom: 40%;
+        left: 15%;
+    }
+}

@@ -1,0 +1,236 @@
+aside{
+    background-color: #374151;
+    width: 300px;
+    height: 100vh;
+
+    .products, .users , .messages{
+        cursor: pointer;
+        padding: 15px;
+        margin: 8px 15px;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+
+            &::before {
+                background-color: #3B82F6;
+            }
+        }
+
+        &.active {
+            background: linear-gradient(90deg, #3B82F6 0%, #2563eb 100%);
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+
+            &::before {
+                background-color: #60A5FA;
+            }
+
+            svg path {
+                stroke: white;
+            }
+
+            h4 {
+                color: white !important;
+                font-weight: 600;
+            }
+        }
+
+        svg {
+            transition: all 0.3s ease;
+        }
+
+        h4 {
+            transition: all 0.3s ease;
+            margin: 0;
+        }
+    }
+}
+
+
+.manage{
+    background-color: #FFFFFF;
+}
+
+table{
+  width: 100%;
+}
+
+.success-alert {
+    animation: slideDown 0.5s ease-in-out;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+    min-width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #28a745;
+    font-weight: 500;
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+.stockStatus{
+  padding-top: 20px;
+}
+
+  .instock{
+    background-color: rgb(138, 225, 8);
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 10px 5px;
+    border-radius: 10px;
+  }
+
+  .outstock{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 10px 5px;
+    border-radius: 10px;
+  }
+
+.add-product-btn {
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  .product-image{
+    width: 80px;
+    height: 80px;
+  }
+
+  .action-btns{
+    cursor: pointer;
+  }
+
+  .action-btn{
+    margin-right: 10px;
+  }
+
+  .product-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .product-form-container {
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .pagination {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    
+    .page-item {
+        list-style: none;
+        
+        .page-link {
+            padding: 8px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            color: #3B82F6;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background-color: #3B82F6;
+                color: #fff;
+                border-color: #3B82F6;
+            }
+        }
+        
+        &.active .page-link {
+            background-color: #3B82F6;
+            color: #fff;
+            border-color: #3B82F6;
+        }
+        
+        &.disabled .page-link {
+            color: #6c757d;
+            pointer-events: none;
+            background-color: #fff;
+            border-color: #dee2e6;
+        }
+    }
+  }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 400px;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.whatsmsg{
+  text-decoration: none;
+  color: #28a745;
+}

@@ -1,0 +1,538 @@
+<div class="dashboard d-flex">
+    <aside>
+        <div class="container p-3">
+            <div class="dashboard d-flex gap-3 align-items-center">
+                <svg width="27" height="27" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.39996 3.39999H4.39996C3.84768 3.39999 3.39996 3.84771 3.39996 4.39999V11.4C3.39996 11.9523 3.84768 12.4 4.39996 12.4H9.39996C9.95225 12.4 10.4 11.9523 10.4 11.4V4.39999C10.4 3.84771 9.95225 3.39999 9.39996 3.39999Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.4 3.39999H15.4C14.8477 3.39999 14.4 3.84771 14.4 4.39999V7.39999C14.4 7.95228 14.8477 8.39999 15.4 8.39999H20.4C20.9522 8.39999 21.4 7.95228 21.4 7.39999V4.39999C21.4 3.84771 20.9522 3.39999 20.4 3.39999Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20.4 12.4H15.4C14.8477 12.4 14.4 12.8477 14.4 13.4V20.4C14.4 20.9523 14.8477 21.4 15.4 21.4H20.4C20.9522 21.4 21.4 20.9523 21.4 20.4V13.4C21.4 12.8477 20.9522 12.4 20.4 12.4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9.39996 16.4H4.39996C3.84768 16.4 3.39996 16.8477 3.39996 17.4V20.4C3.39996 20.9523 3.84768 21.4 4.39996 21.4H9.39996C9.95225 21.4 10.4 20.9523 10.4 20.4V17.4C10.4 16.8477 9.95225 16.4 9.39996 16.4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4 class="text-white fs-3 mt-1">Dashboard</h4>                    
+            </div> 
+            <div class="products d-flex gap-3 mt-5" [class.active]="activeSection === 'products'" (click)="setActiveSection('products')">
+                <svg width="23" height="23" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.64996 3.95831L14.15 8.24998" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17.9 7.06665C17.8997 6.77438 17.8225 6.48733 17.6762 6.23429C17.53 5.98125 17.3197 5.77112 17.0666 5.62498L11.2333 2.29165C10.9799 2.14537 10.6925 2.06836 10.4 2.06836C10.1074 2.06836 9.82 2.14537 9.56663 2.29165L3.7333 5.62498C3.48018 5.77112 3.26995 5.98125 3.12368 6.23429C2.97742 6.48733 2.90026 6.77438 2.89996 7.06665V13.7333C2.90026 14.0256 2.97742 14.3126 3.12368 14.5657C3.26995 14.8187 3.48018 15.0288 3.7333 15.175L9.56663 18.5083C9.82 18.6546 10.1074 18.7316 10.4 18.7316C10.6925 18.7316 10.9799 18.6546 11.2333 18.5083L17.0666 15.175C17.3197 15.0288 17.53 14.8187 17.6762 14.5657C17.8225 14.3126 17.8997 14.0256 17.9 13.7333V7.06665Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M3.14996 6.23334L10.4 10.4L17.65 6.23334" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.4 18.7333V10.4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4 class="text-white fs-5">Products</h4>  
+                <span class="text-white fw-bold">{{products.length}}</span>                  
+            </div>   
+            <div class="users d-flex gap-3 mt-3" [class.active]="activeSection === 'users'" (click)="setActiveSection('users')">
+                <svg width="23" height="23" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.7333 17.9V16.2333C13.7333 15.3493 13.3821 14.5014 12.757 13.8763C12.1319 13.2512 11.284 12.9 10.4 12.9H5.39998C4.51593 12.9 3.66808 13.2512 3.04296 13.8763C2.41784 14.5014 2.06665 15.3493 2.06665 16.2333V17.9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7.89998 9.56666C9.74093 9.56666 11.2333 8.07428 11.2333 6.23333C11.2333 4.39238 9.74093 2.89999 7.89998 2.89999C6.05903 2.89999 4.56665 4.39238 4.56665 6.23333C4.56665 8.07428 6.05903 9.56666 7.89998 9.56666Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.7333 17.9V16.2333C18.7327 15.4948 18.4869 14.7773 18.0344 14.1936C17.5819 13.6099 16.9484 13.193 16.2333 13.0083" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.7333 3.00833C14.4503 3.19192 15.0858 3.60892 15.5396 4.19359C15.9935 4.77826 16.2398 5.49736 16.2398 6.2375C16.2398 6.97764 15.9935 7.69673 15.5396 8.28141C15.0858 8.86608 14.4503 9.28308 13.7333 9.46666" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>     
+                <h4 class="text-white fs-5">Users</h4>  
+                <span class="text-white fw-bold">{{users.length}}</span>                     
+            </div>   
+            <div class="messages d-flex gap-3 mt-3" [class.active]="activeSection === 'messages'" (click)="setActiveSection('messages')">
+                <svg width="21" height="21" fill="#fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M160 368c26.5 0 48 21.5 48 48l0 16 72.5-54.4c8.3-6.2 18.4-9.6 28.8-9.6L448 368c8.8 0 16-7.2 16-16l0-288c0-8.8-7.2-16-16-16L64 48c-8.8 0-16 7.2-16
+                     16l0 288c0 8.8 7.2 16 16 16l96 0zm48 124l-.2 .2-5.1 3.8-17.1 12.8c-4.8 3.6-11.3 4.2-16.8 1.5s-8.8-8.2-8.8-14.3l0-21.3 0-6.4 0-.3 0-4 0-48-48 0-48 
+                     0c-35.3 0-64-28.7-64-64L0 64C0 28.7 28.7 0 64 0L448 0c35.3 0 64 28.7 64 64l0 288c0 35.3-28.7 64-64 64l-138.7 0L208 492z"/></svg>    
+                <h4 class="text-white fs-5">Messages</h4>  
+                <span class="text-white fw-bold">{{messages.length}}</span>                     
+            </div>   
+        </div>
+    </aside>
+    
+
+    <div class="p-5 rounded-4 shadow w-100 mx-5 my-2 manage" *ngIf="activeSection === 'products'">
+        <div class="add-products d-flex justify-content-between align-items-center">
+            <h1>Products</h1>
+            <button class="btn btn-primary add-product-btn" (click)="onAddProduct()">
+                <i class="fas fa-plus-circle me-2"></i>Add New Product
+            </button>
+        </div>
+        <table class="table table-hover mt-5">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Image</td>
+                    <td>Price</td>
+                    <td>Category</td>
+                    <td>Brand</td>
+                    <td>Stock</td>
+                    <td>Status</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
+                    <td>{{product.name}}</td>
+                    <td>
+                        <img src="{{product.image}}" alt="Product Image" class="product-image">
+                    </td>
+                    <td>{{product.price | currency}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.brand}}</td>
+                    <td>{{product.quantity}}</td>
+                    <td class="stockStatus">
+                        <span class="instock" *ngIf="product.quantity > 0">In Stock</span>
+                        <span class="outstock" *ngIf="product.quantity === 0">Out Stock</span>
+                    </td>
+                    <td class="action-btns">
+                            <svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"  class="action-btn" (click)="onEditProduct(product)" title="Edit Product">
+                                <g clip-path="url(#clip0_1_71)">
+                                <path d="M18.2451 5.87665C18.6857 5.43617 18.9332 4.83871 18.9333 4.2157C18.9334 3.59268 18.686 2.99516 18.2455 2.55457C17.805 2.11398 17.2075 1.86641 16.5845 1.86633C15.9615 1.86625 15.364 2.11367 14.9234 2.55415L3.80173 13.6783C3.60825 13.8712 3.46516 14.1088 3.38506 14.37L2.28423 17.9967C2.26269 18.0687 2.26107 18.1453 2.27952 18.2182C2.29798 18.2911 2.33583 18.3577 2.38906 18.4108C2.44229 18.464 2.50891 18.5017 2.58186 18.52C2.65481 18.5384 2.73136 18.5366 2.8034 18.515L6.4309 17.415C6.69187 17.3356 6.92937 17.1934 7.12256 17.0008L18.2451 5.87665Z" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M13.1 4.36664L16.4334 7.69997" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_71">
+                                <rect width="20" height="20" fill="white" transform="translate(0.600037 0.199982)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+                   
+                            <svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="onDeleteProduct(product._id)" title="Delete Product">
+                                <g clip-path="url(#clip0_1_76)">
+                                <path d="M3.10004 5.19998H18.1" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.4334 5.19998V16.8666C16.4334 17.7 15.6001 18.5333 14.7667 18.5333H6.43339C5.60006 18.5333 4.76672 17.7 4.76672 16.8666V5.19998" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.26672 5.19997V3.5333C7.26672 2.69997 8.10006 1.86664 8.93339 1.86664H12.2667C13.1001 1.86664 13.9334 2.69997 13.9334 3.5333V5.19997" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_76">
+                                <rect width="20" height="20" fill="white" transform="translate(0.600037 0.199982)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>  
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center mt-4">
+            <pagination-controls
+                (pageChange)="onPageChange($event)"
+                [itemsPerPage]="itemsPerPage"
+                [totalItems]="products.length"
+                [maxSize]="5"
+                previousLabel="Previous"
+                nextLabel="Next"
+                firstLabel="First"
+                lastLabel="Last"
+                class="pagination">
+            </pagination-controls>
+        </div>
+    </div>
+
+    <div class="p-5 rounded-4 shadow w-100 mx-5 my-2 manage" *ngIf="activeSection === 'users'">
+        <div class="add-products d-flex justify-content-between align-items-center">
+            <h1>Users</h1>
+            <button class="btn btn-primary add-product-btn" (click)="onAddUser()">
+                <i class="fas fa-plus-circle me-2"></i>Add New User
+            </button>
+        </div>
+        <table class="table table-hover mt-5">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Role</td>
+                    <td>Created At</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: itemsPerPageUsers, currentPage: p }">
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                    <td>{{user.createdAt | date: 'medium'}}</td>
+                    <td class="action-btns">
+
+                            <svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="onDeleteUser(user._id)" title="Delete User">
+                                <g clip-path="url(#clip0_1_76)">
+                                <path d="M3.10004 5.19998H18.1" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16.4334 5.19998V16.8666C16.4334 17.7 15.6001 18.5333 14.7667 18.5333H6.43339C5.60006 18.5333 4.76672 17.7 4.76672 16.8666V5.19998" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M7.26672 5.19997V3.5333C7.26672 2.69997 8.10006 1.86664 8.93339 1.86664H12.2667C13.1001 1.86664 13.9334 2.69997 13.9334 3.5333V5.19997" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0_1_76">
+                                <rect width="20" height="20" fill="white" transform="translate(0.600037 0.199982)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>                               
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center mt-4">
+            <pagination-controls
+                (pageChange)="onPageChange($event)"
+                [itemsPerPage]="itemsPerPage"
+                [totalItems]="users.length"
+                [maxSize]="5"
+                previousLabel="Previous"
+                nextLabel="Next"
+                firstLabel="First"
+                lastLabel="Last"
+                class="pagination">
+            </pagination-controls>
+        </div>
+    </div>
+
+    <div class="p-5 rounded-4 shadow w-100 mx-5 my-2 manage" *ngIf="activeSection === 'messages'">
+        <div class="add-products d-flex justify-content-between align-items-center">
+            <h1>Messages</h1>
+        </div>
+        <table class="table table-bordered table-hover mt-5">
+            <thead>
+                <tr>
+                    <td>Name</td>
+                    <td>Phone Number</td>
+                    <td>Email</td>
+                    <td>Message</td>
+                    <td>Date</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let message of messages | paginate: { itemsPerPage: itemsPerPageMessages, currentPage: p }">
+                    <td>{{message.name}}</td>
+                    <td class="d-flex flex-column"><span class="fw-bold">{{message.phone}}</span> <a href="https://wa.me/{{`+2${message.phone}`}}?text=Iam%20Ahmed%20Fadl%20From%20Fashion%20E-commerce%20Can%20I%20Know%20Whats%20Your%20Problem" target="_blank" rel="noopener noreferrer" class="whatsmsg">Send Whatsapp Message</a></td>
+                    <td><span class="fw-bold">{{message.email}}</span> <a href="mailto:{{message.email}}" title="Click to reply to {{message.email}}" target="_blank" rel="noopener noreferrer">Reply?</a></td>
+                    <td>{{message.message}}</td>
+                    <td>{{message.createdAt | date: 'medium'}}</td>
+                    <td class="action-btns">
+                        <svg width="24" height="24" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" (click)="onDeleteMessage(message._id)" title="Delete Message">
+                            <g clip-path="url(#clip0_1_76)">
+                            <path d="M3.10004 5.19998H18.1" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16.4334 5.19998V16.8666C16.4334 17.7 15.6001 18.5333 14.7667 18.5333H6.43339C5.60006 18.5333 4.76672 17.7 4.76672 16.8666V5.19998" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7.26672 5.19997V3.5333C7.26672 2.69997 8.10006 1.86664 8.93339 1.86664H12.2667C13.1001 1.86664 13.9334 2.69997 13.9334 3.5333V5.19997" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_1_76">
+                            <rect width="20" height="20" fill="white" transform="translate(0.600037 0.199982)"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center mt-4">
+            <pagination-controls
+                (pageChange)="onPageChange($event)"
+                [itemsPerPage]="itemsPerPageMessages"
+                [totalItems]="messages.length"
+                [maxSize]="5"
+                previousLabel="Previous"
+                nextLabel="Next"
+                firstLabel="First"
+                lastLabel="Last"
+                class="pagination">
+            </pagination-controls>
+        </div>
+    </div>
+</div>
+
+
+<div *ngIf="showSuccessAlert" class="success-alert alert alert-success alert-dismissible fade show mt-3" role="alert">
+    <i class="fas fa-check-circle me-2"></i>{{ successMessage }}
+    <button type="button" class="btn-close" (click)="showSuccessAlert = false" aria-label="Close"></button>
+</div>
+
+
+<div class="product-form-overlay" *ngIf="productForm">
+<div class="product-form-container bg-white p-4 rounded-3 shadow">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="m-0 text-primary">Add New Product</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="productForm = false"></button>
+    </div>
+    
+    <div *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
+    
+    <form class="row g-3" [formGroup]="newProductForm" (ngSubmit)="onSubmitProduct()">
+        <div class="col-md-6">
+            <label for="name" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="name" formControlName="name" placeholder="Product Name">
+            <div *ngIf="formSubmitted && newProductForm.get('name')?.errors?.['required']" class="text-danger small">
+                Name is required
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <label for="brand" class="form-label">Product Brand</label>
+            <input type="text" class="form-control" id="brand" formControlName="brand" placeholder="Product Brand">
+            <div *ngIf="formSubmitted && newProductForm.get('brand')?.errors?.['required']" class="text-danger small">
+                Brand is required
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <label for="description" class="form-label">Product Description</label>
+            <textarea class="form-control" id="description" formControlName="description" placeholder="Product Description" rows="3"></textarea>
+            <div *ngIf="formSubmitted && newProductForm.get('description')?.errors?.['required']" class="text-danger small">
+                Description is required
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="category" class="form-label">Product Category</label>
+            <input type="text" class="form-control" id="category" formControlName="category" placeholder="Product Category">
+            <div *ngIf="formSubmitted && newProductForm.get('category')?.errors?.['required']" class="text-danger small">
+                Category is required
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="price" class="form-label">Product Price</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" class="form-control" id="price" formControlName="price" placeholder="Product Price">
+            </div>
+            <div *ngIf="formSubmitted && newProductForm.get('price')?.errors?.['required']" class="text-danger small">
+                Price is required
+            </div>
+            <div *ngIf="formSubmitted && newProductForm.get('price')?.errors?.['min']" class="text-danger small">
+                Price must be at least 0
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="quantity" class="form-label">Product Quantity</label>
+            <input type="number" class="form-control" id="quantity" formControlName="quantity" placeholder="Product Quantity">
+            <div *ngIf="formSubmitted && newProductForm.get('quantity')?.errors?.['required']" class="text-danger small">
+                Quantity is required
+            </div>
+            <div *ngIf="formSubmitted && newProductForm.get('quantity')?.errors?.['min']" class="text-danger small">
+                Quantity must be at least 1
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="reviews" class="form-label">Product Reviews</label>
+            <input type="number" class="form-control" id="reviews" formControlName="reviews" placeholder="Product Reviews">
+        </div>
+        
+        <div class="col-md-4">
+            <label for="rating" class="form-label">Product Rating</label>
+            <input type="number" class="form-control" id="rating" formControlName="rating" placeholder="Product Rating" min="0" max="5" step="0.1">
+            <div *ngIf="formSubmitted && (newProductForm.get('rating')?.errors?.['min'] || newProductForm.get('rating')?.errors?.['max'])" class="text-danger small">
+                Rating must be between 0 and 5
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <label for="image" class="form-label">Product Image URL</label>
+            <input type="text" class="form-control" id="image" formControlName="image" placeholder="Product Image URL">
+            <div *ngIf="formSubmitted && newProductForm.get('image')?.errors?.['required']" class="text-danger small">
+                Image URL is required
+            </div>
+        </div>
+        
+        <div class="col-12 mt-4 text-center">
+            <button type="button" class="btn btn-secondary me-2" (click)="productForm = false">Cancel</button>
+            <button type="submit" class="btn btn-primary" [disabled]="submitLoading">
+                <span *ngIf="submitLoading"><i class="fas fa-spinner fa-spin me-1"></i>Adding...</span>
+                <span *ngIf="!submitLoading">Add Product</span>
+            </button>
+        </div>
+    </form>
+</div>
+</div>
+
+
+<div class="modal-overlay" *ngIf="showDeleteConfirm">
+    <div class="modal-content bg-white p-4 rounded-4 shadow">
+        <div class="text-center mb-4">
+            <i class="fas fa-exclamation-triangle text-warning fa-3x mb-3"></i>
+            <h3>Delete Product</h3>
+            <p class="text-muted">Are you sure you want to delete "{{productToDelete?.name}}"?</p>
+            <p class="text-danger small">This action cannot be undone.</p>
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+            <button class="btn btn-danger" (click)="confirmDelete()">
+                <i class="fas fa-trash-alt me-2"></i>Delete
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Product Form Modal -->
+<div class="product-form-overlay" *ngIf="editForm">
+    <div class="product-form-container bg-white p-4 rounded-3 shadow">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="m-0 text-primary">Edit Product</h3>
+            <button type="button" class="btn-close" aria-label="Close" (click)="editForm = false"></button>
+        </div>
+        
+        <div *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
+        
+        <form class="row g-3" [formGroup]="editProductForm" (ngSubmit)="onSubmitEdit()">
+            <div class="col-md-6">
+                <label for="editName" class="form-label">Product Name</label>
+                <input type="text" class="form-control" id="editName" formControlName="name" placeholder="Product Name">
+                <div *ngIf="formSubmitted && editProductForm.get('name')?.errors?.['required']" class="text-danger small">
+                    Name is required
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="editBrand" class="form-label">Product Brand</label>
+                <input type="text" class="form-control" id="editBrand" formControlName="brand" placeholder="Product Brand">
+                <div *ngIf="formSubmitted && editProductForm.get('brand')?.errors?.['required']" class="text-danger small">
+                    Brand is required
+                </div>
+            </div>
+            
+            <div class="col-12">
+                <label for="editDescription" class="form-label">Product Description</label>
+                <textarea class="form-control" id="editDescription" formControlName="description" placeholder="Product Description" rows="3"></textarea>
+                <div *ngIf="formSubmitted && editProductForm.get('description')?.errors?.['required']" class="text-danger small">
+                    Description is required
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editCategory" class="form-label">Product Category</label>
+                <input type="text" class="form-control" id="editCategory" formControlName="category" placeholder="Product Category">
+                <div *ngIf="formSubmitted && editProductForm.get('category')?.errors?.['required']" class="text-danger small">
+                    Category is required
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editPrice" class="form-label">Product Price</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input type="number" class="form-control" id="editPrice" formControlName="price" placeholder="Product Price">
+                </div>
+                <div *ngIf="formSubmitted && editProductForm.get('price')?.errors?.['required']" class="text-danger small">
+                    Price is required
+                </div>
+                <div *ngIf="formSubmitted && editProductForm.get('price')?.errors?.['min']" class="text-danger small">
+                    Price must be at least 0
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editQuantity" class="form-label">Product Quantity</label>
+                <input type="number" class="form-control" id="editQuantity" formControlName="quantity" placeholder="Product Quantity">
+                <div *ngIf="formSubmitted && editProductForm.get('quantity')?.errors?.['required']" class="text-danger small">
+                    Quantity is required
+                </div>
+                <div *ngIf="formSubmitted && editProductForm.get('quantity')?.errors?.['min']" class="text-danger small">
+                    Quantity must be at least 1
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editReviews" class="form-label">Product Reviews</label>
+                <input type="number" class="form-control" id="editReviews" formControlName="reviews" placeholder="Product Reviews">
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editRating" class="form-label">Product Rating</label>
+                <input type="number" class="form-control" id="editRating" formControlName="rating" placeholder="Product Rating" min="0" max="5" step="0.1">
+                <div *ngIf="formSubmitted && (editProductForm.get('rating')?.errors?.['min'] || editProductForm.get('rating')?.errors?.['max'])" class="text-danger small">
+                    Rating must be between 0 and 5
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <label for="editImage" class="form-label">Product Image URL</label>
+                <input type="text" class="form-control" id="editImage" formControlName="image" placeholder="Product Image URL">
+                <div *ngIf="formSubmitted && editProductForm.get('image')?.errors?.['required']" class="text-danger small">
+                    Image URL is required
+                </div>
+            </div>
+            
+            <div class="col-12 mt-4 text-center">
+                <button type="button" class="btn btn-secondary me-2" (click)="editForm = false">Cancel</button>
+                <button type="submit" class="btn btn-primary" [disabled]="submitLoading">
+                    <span *ngIf="submitLoading"><i class="fas fa-spinner fa-spin me-1"></i>Updating...</span>
+                    <span *ngIf="!submitLoading">Update Product</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="product-form-overlay" *ngIf="userForm">
+    <div class="product-form-container bg-white p-4 rounded-3 shadow">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="m-0 text-primary">Add New User</h3>
+            <button type="button" class="btn-close" aria-label="Close" (click)="userForm = false"></button>
+        </div>
+        
+        <div *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
+        
+        <form class="row g-3" [formGroup]="newUserForm" (ngSubmit)="onSubmitUser()">
+            <div class="col-md-6">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" formControlName="username" placeholder="Enter username">
+                <div *ngIf="formSubmitted && newUserForm.get('username')?.errors?.['required']" class="text-danger small">
+                    Username is required
+                </div>
+                <div *ngIf="formSubmitted && newUserForm.get('username')?.errors?.['minlength']" class="text-danger small">
+                    Username must be at least 3 characters
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email">
+                <div *ngIf="formSubmitted && newUserForm.get('email')?.errors?.['required']" class="text-danger small">
+                    Email is required
+                </div>
+                <div *ngIf="formSubmitted && newUserForm.get('email')?.errors?.['email']" class="text-danger small">
+                    Please enter a valid email
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter password">
+                <div *ngIf="formSubmitted && newUserForm.get('password')?.errors?.['required']" class="text-danger small">
+                    Password is required
+                </div>
+                <div *ngIf="formSubmitted && newUserForm.get('password')?.errors?.['minlength']" class="text-danger small">
+                    Password must be at least 6 characters
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <label for="role" class="form-label">Role</label>
+                <select class="form-select" id="role" formControlName="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <div *ngIf="formSubmitted && newUserForm.get('role')?.errors?.['required']" class="text-danger small">
+                    Role is required
+                </div>
+            </div>
+            
+            <div class="col-12 mt-4 text-center">
+                <button type="button" class="btn btn-secondary me-2" (click)="userForm = false">Cancel</button>
+                <button type="submit" class="btn btn-primary" [disabled]="submitLoading">
+                    <span *ngIf="submitLoading"><i class="fas fa-spinner fa-spin me-1"></i>Adding...</span>
+                    <span *ngIf="!submitLoading">Add User</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showDeleteMessageConfirm">
+    <div class="modal-content bg-white p-4 rounded-4 shadow">
+        <div class="text-center mb-4">
+            <i class="fas fa-exclamation-triangle text-warning fa-3x mb-3"></i>
+            <h3>Delete Message</h3>
+            <p class="text-muted">Are you sure you want to delete this message?</p>
+            <p class="text-danger small">This action cannot be undone.</p>
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-secondary" (click)="cancelDeleteMessage()">Cancel</button>
+            <button class="btn btn-danger" (click)="confirmDeleteMessage()">
+                <i class="fas fa-trash-alt me-2"></i>Delete
+            </button>
+        </div>
+    </div>
+</div>

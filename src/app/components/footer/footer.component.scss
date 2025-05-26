@@ -1,0 +1,46 @@
+.footer{
+    background-color: #FBFBFB;
+}
+
+ul li a{
+    color: #000;
+    text-decoration: none;
+}
+
+input{
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid #000;
+    outline: none !important;
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+i:hover{
+    cursor: pointer;
+}
+
+.copyright{
+    border-top: 2px solid #E8E8E8;
+}
+
+.copyright a{
+    color: #000;
+    text-decoration: none;
+}
+
+@media(max-width: 992px){
+    .copyright .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .container .payment-info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+    }
+}

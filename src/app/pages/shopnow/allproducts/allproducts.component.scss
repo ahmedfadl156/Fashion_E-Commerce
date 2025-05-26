@@ -1,0 +1,97 @@
+.top-header{
+    background-color: #024E82;
+}
+
+h1 , h4{
+    text-transform: capitalize;
+}
+
+.filter-items{
+    background-color: #f9f8f8 !important;
+}
+
+.filters input , .brands input , .categories input , .sizes input{
+    width: 20px;
+    height: 20px;
+}
+
+.filters input:checked , .brands input:checked , .categories input:checked , .sizes input:checked{
+    accent-color: #024E82;
+}
+
+.filters p , .brands p , .categories p , .sizes p{
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.products-row{
+    margin: 0 12rem;
+}
+
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.2);
+    transform: scale(1.03);
+}
+
+.card-title:hover{
+    color: #024E82;
+}
+
+.card {
+    transition: all 0.3s ease;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    text-align: center;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.card p{
+    color: #024E82;
+}
+
+mat-slider {
+    width: 90%;
+  }
+
+  mat-paginator{
+    margin-top: 20px;
+  }
+
+  .apply-changes{
+    border: none;
+    outline: none;
+    background-color: #024E82;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+  }
+
+  .card img{
+    border-bottom: 3px solid #024E82;
+    // min-width: 290px;
+    min-height: 290px;
+    width: 100%;
+    max-height: 290px;
+}
+
+  .apply-changes:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 123, 255, 0.3);
+  }
+
+@media(max-width: 992px){
+    .col-md-9 .row{
+        margin: 0 !important;
+    }
+}
+
